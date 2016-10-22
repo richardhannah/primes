@@ -31,14 +31,22 @@ public class PrimesTableBuilder implements MultiplicationTableBuilder {
         }
 
         formattedTable = new FormattedTable();
-        formattedTable.setTable(table);
-
-
+        formattedTable.setTable(calculated(table));
         return formattedTable;
     }
 
     public void setTable(long[][] table) {
 
+    }
+
+    private long[][] calculated(long[][] table){
+
+        for(int x = 1;x < table.length; x++){
+            for(int y = 1;y < table.length; y++){
+                table[x][y] = table[0][x] * table[y][0];
+            }
+        }
+        return table;
     }
 
 }
