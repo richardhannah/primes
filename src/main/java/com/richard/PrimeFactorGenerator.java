@@ -17,12 +17,9 @@ public class PrimeFactorGenerator implements FactorGenerator {
 
         long[] factors = new long[numberOfFactors];
 
-        int position = 0;
-        for(int i = 0; i < factors.length; i++){
-            if(Primes.isPrime(i)){
-                factors[position] = i;
-                position++;
-            }
+        factors[0] = 2;
+        for(int i = 0; i < factors.length -1; i++){
+            factors[i + 1] = Primes.nextPrime((int) factors[i] +1);
         }
         return factors;
     }

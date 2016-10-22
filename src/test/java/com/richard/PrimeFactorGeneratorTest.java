@@ -23,7 +23,7 @@ public class PrimeFactorGeneratorTest {
     @Test
     public void generateFactors() throws Exception {
 
-        int numfactors =2;
+        int numfactors =10;
 
         long[] factors = factorGenerator.generateFactors(numfactors);
 
