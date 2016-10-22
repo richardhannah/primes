@@ -1,5 +1,7 @@
 package com.richard;
 
+import org.apache.commons.math3.primes.Primes;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,6 +28,9 @@ public class PrimeFactorGeneratorTest {
         long[] factors = factorGenerator.generateFactors(numfactors);
 
         assertThat(factors.length).isEqualTo(numfactors);
+        for(long factor : factors){
+            assertThat(Primes.isPrime((int)factor));
+        }
 
 
     }
