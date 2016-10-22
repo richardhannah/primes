@@ -1,23 +1,21 @@
 package com.richard;
 
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /**
  * Created by highl on 22/10/2016.
  */
-public class PrimesGeneratorImplTest {
+public class PrimesMutiplicationTableImplTest {
 
 
-    PrimesGenerator primesGenerator;
+    PrimesMultiplicationTable primesMultiplicationTable;
 
     @Before
     public void setUp() throws Exception {
-        primesGenerator = new PrimesGeneratorImpl();
+        primesMultiplicationTable = new PrimesMutiplicationTableImpl();
     }
 
     @Test
@@ -25,7 +23,7 @@ public class PrimesGeneratorImplTest {
 
         int arraySize = 1;
 
-        int[][] primesArray = primesGenerator.getPrimesArray(arraySize);
+        int[][] primesArray = primesMultiplicationTable.getPrimesArray(arraySize);
 
         assertThat(primesArray.length).isEqualTo(arraySize + 1); //row
         assertThat(primesArray[0].length).isEqualTo(arraySize + 1); //col
