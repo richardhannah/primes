@@ -6,7 +6,7 @@ import org.apache.commons.math3.primes.Primes;
  * Created by highl on 22/10/2016.
  */
 public class SimplePrimes implements PrimesAlgorithm {
-    @Override
+
     public long[] getPrimes(int n) {
         long[] factors = new long[n];
 

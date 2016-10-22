@@ -4,29 +4,47 @@ package com.richard;
  * Created by highl on 22/10/2016.
  */
 public class EratosthenesSieve implements PrimesAlgorithm {
-    @Override
+
+    int range = 10000;
+
     public long[] getPrimes(int n) {
 
-        long[] primes = new long[n];
-        //primes[0] = 2;
+        long[] factors = new long[n];
 
-        boolean[] primesBool = new boolean[n +1];
-        for(boolean primebool : primesBool){
-            primebool = true;
+        factors[0] = 2;
+        for(int i = 0; i < factors.length -1; i++){
+            factors[i + 1] = getNextPrime(factors[i]);
         }
-        primesBool[0] = false;
-        primesBool[1] = false;
-        int primesIndex = 0;
-        for (int i = (int)primes[primesIndex]; i < n; i++ ){
-           if(primesBool[i]){
-               for(int j =(int)primes[i]; i*j <= n; j++ ){
-                   primesBool[i*j]=false;
-               }
-           }
-            primes[primesIndex + 1] = i;
+        return factors;
+
+
+    }
+
+    private long getNextPrime(long lastPrime){
+
+        if(lastPrime * 2 > range){
+            range = range*2;
+        }
+        boolean[] primes = new boolean[range +1];
+        for(int i = 0; i < primes.length; i++){
+            primes[i] = true;
+        }
+        primes[0] = false;
+        primes[1] = false;
+        for(int i = 2; i <= range; i++){
+            if(primes[i]){
+                for(int j = 2; i*j <= range; j++){
+                    primes[i*j] = false;
+                }
+            }
         }
 
-        return primes;
+        for(int i = (int)lastPrime +1; i < primes.length; i++){
+            if(primes[i]){
+                return i;
+            }
+        }
+        return 0;
     }
 
 }
