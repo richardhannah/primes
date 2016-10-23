@@ -34,9 +34,9 @@ public class PrimesTableFormatterTest {
 
         List<String> formattedRows;
 
-        formattedRows = tableFormatter.formatTable(table);
+        formattedRows = tableFormatter.formatTable(table,2);
 
-        String regex = "[\\|\\d\\|]+";
+        String regex = "[ *\\|\\d\\|]+";
         for(String row : formattedRows){
             assertTrue(row.matches(regex));
         }

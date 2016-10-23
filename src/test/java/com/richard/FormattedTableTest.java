@@ -8,6 +8,8 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
@@ -17,19 +19,15 @@ import static org.mockito.BDDMockito.given;
  */
 public class FormattedTableTest {
 
-    long[][] table;
+    List<String> tableRows;
 
 
     Duration duration;
 
     @Before
     public void setUp() throws Exception {
-
-        table = new long[3][3];
-        table[0] = new long[]{1,2,3};
-        table[1] = new long[]{1,2,3};
-        table[2] = new long[]{1,2,3};
-
+        tableRows = new ArrayList<>();
+        tableRows.add("test");
         duration = Duration.between(Instant.now(),Instant.now().plusNanos(10000));
     }
 
@@ -43,7 +41,7 @@ public class FormattedTableTest {
     public void display() throws Exception {
 
         FormattedTable formattedTable = new FormattedTable();
-        formattedTable.setTable(table);
+        formattedTable.setTable(tableRows);
         formattedTable.setPrimesDuration(duration);
         formattedTable.setMultTableDuration(duration);
         formattedTable.display();
