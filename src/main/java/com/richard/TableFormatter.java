@@ -7,6 +7,6 @@ import java.util.List;
  */
 public interface TableFormatter {
 
-    List<String> formatTable(long[][] table);
+    List<String> formatTable(long[][] table,int dimensions);
 
 }

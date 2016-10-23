@@ -40,7 +40,7 @@ public class PrimesTableBuilder implements MultiplicationTableBuilder {
             table[0][i] = factors[i-1];
             table[i][0] = factors[i-1];
         }
-        formattedTable.setTable(calculated(table));
+        formattedTable.setTable(formatter.formatTable(calculated(table),dimensions));
         return formattedTable;
     }
 
