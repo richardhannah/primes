@@ -7,7 +7,7 @@ public interface MultiplicationTableBuilder {
 
 
     MultiplicationTableBuilder withFormatter(TableFormatter tableFormatter);
-    MultiplicationTableBuilder withFactorGenerator(FactorGenerator factorGenerator);
+    MultiplicationTableBuilder withAlgorithm(PrimesAlgorithm algorithm);
     FormattedTable build(int dimensions);
 
 

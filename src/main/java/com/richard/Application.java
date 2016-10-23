@@ -24,7 +24,7 @@ public class Application {
 
         MultiplicationTableBuilder tableBuilder = new PrimesTableBuilder()
                 .withFormatter(new PrimesTableFormatter())
-                .withFactorGenerator(new PrimeFactorGenerator(new EratosthenesSieve()));
+                .withAlgorithm(new EratosthenesSieve());
         FormattedTable table = tableBuilder.build(dimensions);
         table.display();
 

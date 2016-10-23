@@ -18,10 +18,10 @@ public class PrimesTableBuilderTest {
     MultiplicationTableBuilder multiplicationTableBuilder;
 
     @Mock
-    FactorGenerator factorGenerator;
+    TableFormatter tableFormatter;
 
     @Mock
-    TableFormatter tableFormatter;
+    PrimesAlgorithm primesAlgorithm;
 
     @Before
     public void setUp() throws Exception {
@@ -31,7 +31,7 @@ public class PrimesTableBuilderTest {
 
     @Test
     public void withFactorGenerator() throws Exception {
-        MultiplicationTableBuilder builder = multiplicationTableBuilder.withFactorGenerator(factorGenerator);
+        MultiplicationTableBuilder builder = multiplicationTableBuilder.withAlgorithm(primesAlgorithm);
         assertTrue(builder.equals(multiplicationTableBuilder));
     }
 
@@ -46,11 +46,11 @@ public class PrimesTableBuilderTest {
 
         long[] factors = new long[]{2,3,5};
 
-        given(factorGenerator.generateFactors(anyInt())).willReturn(factors);
+        given(primesAlgorithm.getPrimes(anyInt())).willReturn(factors);
 
         FormattedTable formattedTable = multiplicationTableBuilder
                 .withFormatter(tableFormatter)
-                .withFactorGenerator(factorGenerator)
+                .withAlgorithm(primesAlgorithm)
                 .build(1);
     }
 

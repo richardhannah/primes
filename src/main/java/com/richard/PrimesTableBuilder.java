@@ -7,10 +7,10 @@ public class PrimesTableBuilder implements MultiplicationTableBuilder {
 
     FormattedTable formattedTable;
     TableFormatter formatter;
-    FactorGenerator factorGenerator;
+    PrimesAlgorithm primesAlgorithm;
 
-    public MultiplicationTableBuilder withFactorGenerator(FactorGenerator factorGenerator) {
-        this.factorGenerator = factorGenerator;
+    public MultiplicationTableBuilder withAlgorithm(PrimesAlgorithm algorithm) {
+        this.primesAlgorithm = algorithm;
         return this;
     }
 
@@ -21,7 +21,7 @@ public class PrimesTableBuilder implements MultiplicationTableBuilder {
 
     public FormattedTable build(int dimensions) {
 
-        long[] factors = factorGenerator.generateFactors(dimensions);
+        long[] factors = primesAlgorithm.getPrimes(dimensions);
 
         long[][] table = new long[dimensions+1][dimensions+1];
 
