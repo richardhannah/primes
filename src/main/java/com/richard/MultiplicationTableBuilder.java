@@ -5,7 +5,7 @@ package com.richard;
  */
 public interface MultiplicationTableBuilder {
 
-    void setTable(long[][] table);
+
     MultiplicationTableBuilder withFormatter(TableFormatter tableFormatter);
     MultiplicationTableBuilder withFactorGenerator(FactorGenerator factorGenerator);
     FormattedTable build(int dimensions);

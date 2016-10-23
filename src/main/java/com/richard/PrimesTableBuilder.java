@@ -35,10 +35,6 @@ public class PrimesTableBuilder implements MultiplicationTableBuilder {
         return formattedTable;
     }
 
-    public void setTable(long[][] table) {
-
-    }
-
     private long[][] calculated(long[][] table){
 
         for(int x = 1;x < table.length; x++){
