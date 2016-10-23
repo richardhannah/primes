@@ -5,5 +5,5 @@ package com.richard;
  */
 public interface PrimesAlgorithm {
 
-    public long[] getPrimes(int n);
+    long[] getPrimes(int n);
 }
