@@ -4,6 +4,8 @@ import org.apache.commons.math3.primes.Primes;
 
 /**
  * Created by highl on 22/10/2016.
+ *
+ * Primes generation using the Apache Commons Math library - for comparison
  */
 public class SimplePrimes implements PrimesAlgorithm {
 
