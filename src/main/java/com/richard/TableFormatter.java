@@ -7,6 +7,12 @@ import java.util.List;
  */
 public interface TableFormatter {
 
+    /**
+     * Formats a 2d array into a list of strings
+     * @param table the table
+     * @param dimensions dimensions of the table
+     * @return list of strings
+     */
     List<String> formatTable(long[][] table,int dimensions);
 
 }
